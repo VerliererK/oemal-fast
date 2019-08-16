@@ -17,13 +17,13 @@ function testPic() {
         if (this.readyState == 4 && this.status == 200) {
             $('#mediaFile').val('');
             MyFile = this.response;
-            $('#profile').css('background-image', 'url(' + '/test.jpg' + ')');
+            $('#profile').css('background-image', 'url(' + 'https://raw.githubusercontent.com/VerliererK/oemal-fast/gh-pages/test.jpg' + ')');
             $('#profile label').addClass("hasImage");
             $('#profile .dashes').addClass("hasImage");
             //console.log(this.response, typeof this.response);
         }
     }
-    xhr.open('GET', '/test.jpg');
+    xhr.open('GET', 'https://raw.githubusercontent.com/VerliererK/oemal-fast/gh-pages/test.jpg');
     xhr.responseType = 'blob';
     xhr.send();
 }
