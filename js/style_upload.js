@@ -101,6 +101,8 @@ function onUploadSuccess(data) {
       if(!isDraw) { isDraw = true; removeAllMesh(); drawzq(foot[k]); }
     console.log(k);
   }
+  content = $('#foot')[0];
+  content.style.maxHeight = content.scrollHeight + "px";
   
 }
 
@@ -133,10 +135,29 @@ $('#uploadFile').click(function (e) {
       cache: false,
       contentType: false,
       processData: false,
-    dataType: 'text',
+      dataType: 'text',
       success: onUploadSuccess,
-    error: onUploadFailed
+      error: onUploadFailed
     
   });
   
+});
+
+
+$('#foot').click(function() {
+  content = this;
+  if (content.style.maxHeight){
+    content.style.maxHeight = null;
+  } else {
+    content.style.maxHeight = content.scrollHeight + "px";
+  }
+});
+
+$('#foot_collapse').click(function() {
+  content = $('#foot')[0];
+  if (content.style.maxHeight){
+    content.style.maxHeight = null;
+  } else {
+    content.style.maxHeight = content.scrollHeight + "px";
+  }
 });

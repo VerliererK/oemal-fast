@@ -21,13 +21,16 @@ body {
   background-color: rgba(40, 40, 40, 0.5);
   margin: 1em;
   padding: 1em;
+  padding-bottom: 0px;
   border-radius: 1em;
 }
 
 #foot {
   color: white;
-  min-height: 120px;
   min-width: 180px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
 }
 
 #foot3DView {
